@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Koolitus.Models.Opetaja>
+
+@{
+    ViewBag.Title = "Opetaja";
+}
+
+<h2>Opetaja</h2>
+
+<p>
+    @Html.ActionLink("Loo uus", "OpetajaC")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Opetaja Eesnimi
+        </th>
+        <th>
+            Opetaja Perenimi
+        </th>
+        <th>
+            Telefon
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpetajaEesnimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpetajaPerenimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.ActionLink("Muuda", "OpetajaE", new { id=item.Id }) |
+           
+            @Html.ActionLink("Kustuta", "OpetajaD", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

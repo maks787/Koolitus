@@ -1,0 +1,64 @@
+﻿@model Koolitus.Models.koolitused
+
+@{
+    ViewBag.Title = "Kustuta";
+}
+
+<h2>Kustuta</h2>
+
+<h3>Kas sa oled kindel?</h3>
+<div>
+    <h4>koolitused</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Koolitusnimetus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Koolitusnimetus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Koolituskirjeldus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Koolituskirjeldus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opetajaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opetajaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.koolitusehind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.koolitusehind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.koolitusemaht)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.koolitusemaht)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Tagasi", "Koolitused")
+        </div>
+    }
+</div>
